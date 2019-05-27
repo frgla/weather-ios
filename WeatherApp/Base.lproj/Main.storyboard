@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,34 +14,36 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyw-qq-jX8">
-                                <rect key="frame" x="170" y="114" width="35" height="24"/>
+                                <rect key="frame" x="189.5" y="114" width="35" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpC-62-Shx">
-                                <rect key="frame" x="157" y="137" width="61.333333333333343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpC-62-Shx">
+                                <rect key="frame" x="176.5" y="144" width="61" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQ2-0A-vWX">
-                                <rect key="frame" x="114" y="295" width="140" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQ2-0A-vWX">
+                                <rect key="frame" x="147.5" y="303.5" width="119" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X1a-zj-dsr">
-                                <rect key="frame" x="138" y="175" width="100" height="100"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X1a-zj-dsr">
+                                <rect key="frame" x="157" y="183.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="baA-Hy-YjX"/>
+                                    <constraint firstAttribute="height" constant="100" id="lZE-AV-sbq"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6is-tt-f0b">
-                                <rect key="frame" x="118" y="335" width="140" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6is-tt-f0b">
+                                <rect key="frame" x="190" y="349.5" width="34" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,10 +51,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6is-tt-f0b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4n2-Cu-QOH"/>
+                            <constraint firstItem="X1a-zj-dsr" firstAttribute="top" secondItem="GpC-62-Shx" secondAttribute="bottom" constant="20" id="HUl-7f-QtR"/>
                             <constraint firstItem="X1a-zj-dsr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JJ1-9H-vsl"/>
                             <constraint firstItem="GpC-62-Shx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NkG-bT-HRE"/>
+                            <constraint firstItem="GpC-62-Shx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="b6k-0g-36J"/>
+                            <constraint firstItem="6is-tt-f0b" firstAttribute="top" secondItem="TQ2-0A-vWX" secondAttribute="bottom" constant="20" id="fdu-Li-WAq"/>
                             <constraint firstItem="Yyw-qq-jX8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jPK-hN-6As"/>
+                            <constraint firstItem="TQ2-0A-vWX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oda-tr-vlg"/>
                             <constraint firstItem="Yyw-qq-jX8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="qS9-we-dy6"/>
+                            <constraint firstItem="TQ2-0A-vWX" firstAttribute="top" secondItem="X1a-zj-dsr" secondAttribute="bottom" constant="20" id="tEG-nS-r8q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
