@@ -18,6 +18,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBAction func forecastButton(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name:"Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "ForecastViewController") as? ForecastViewController else {return}
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     //constants
     let locationManager = CLLocationManager()
@@ -28,6 +33,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Weather app"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -58,7 +65,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        print("latitude: \(locValue.latitude) longitude: \(locValue.longitude)")
+        print(("latitude: \(locValue.latitude) longitude: \(locValue.longitude)"))
         
         Location.sharedInstance.latitude = locValue.latitude
         Location.sharedInstance.longitude = locValue.longitude
@@ -66,6 +73,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         downloadWeather {
             self.updateUI()
         }
+        downloadForecast {}
     }
 
 }

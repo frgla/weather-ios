@@ -90,10 +90,10 @@ func downloadWeather (completed: @escaping DownloadComplete) {
             
             let description = weather.weather[0].main
             
-            print (city,"\n",
-                   temperature,"\n",
-                   date,"\n",
-                   description)
+//            print (city,"\n",
+//                   temperature,"\n",
+//                   date,"\n",
+//                   description)
             parsedValues = ["city": city,
                             "temperature": temperature,
                             "date": date,
