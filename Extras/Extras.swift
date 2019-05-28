@@ -13,4 +13,5 @@ let API_URL = URL (string: "http://api.openweathermap.org/data/2.5/weather?lat=\
 //let FORECAST_API_URL = URL(string: "http://api.openweathermap.org/data/2.5/forecast?lat=\(Location.sharedInstance.latitude!)&lon=\(Location.sharedInstance.longitude!)&appid=129ada8d2a304cb801691437cf896942")
 
 let FORECAST_API_URL = URL(string: "https://api.darksky.net/forecast/6dcdd4ac785c81f86ae2f3d9d232fd55/\(Location.sharedInstance.latitude!),\(Location.sharedInstance.longitude!)?units=si")
-typealias DownloadComplete = () -> ()
+
+let GEO_API_URL = URL(string: "https://api.opencagedata.com/geocode/v1/json?q=\(Location.sharedInstance.latitude!)+\(Location.sharedInstance.longitude!)&key=c8cd4ae1cd1243b294ed9dd65868f28e")

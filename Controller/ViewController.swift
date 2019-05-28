@@ -12,6 +12,7 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
     //outlets
+    var currentWeather: WeatherModel!
     
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
@@ -21,6 +22,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func forecastButton(_ sender: Any) {
         let storyboard: UIStoryboard = UIStoryboard(name:"Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "ForecastViewController") as? ForecastViewController else {return}
+        vc.dailyForecastArray = currentWeather.dailyForecastArray
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -35,7 +37,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         self.title = "Weather app"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
-        // Do any additional setup after loading the view, typically from a nib.
         userLocation()
     }
     
@@ -43,12 +44,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func updateUI () {
-        //print ("\(parsedValues["city"])!")
         DispatchQueue.main.async {
-            self.cityLabel.text = "\(parsedValues["city"] ?? "")"
-            self.weatherDescriptionLabel.text = "\(parsedValues["description"] ?? "")"
-            self.temperatureLabel.text = "\(parsedValues["temperature"] ?? "")"
-            self.dateLabel.text = "\(parsedValues["date"] ?? "")"
+            self.cityLabel.text = self.currentWeather.cityName
+            self.weatherDescriptionLabel.text = self.currentWeather.summary
+            self.temperatureLabel.text = "\(self.currentWeather.temperature)"
+            self.dateLabel.text = self.currentWeather.date
         }
     }
     
@@ -70,11 +70,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         Location.sharedInstance.latitude = locValue.latitude
         Location.sharedInstance.longitude = locValue.longitude
         
-        downloadWeather {
+        NetworkManager.downloadWeather { (weather) in
+            self.currentWeather = weather
             self.updateUI()
         }
-        downloadForecast {}
     }
-
 }
 

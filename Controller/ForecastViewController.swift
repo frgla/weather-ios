@@ -10,7 +10,7 @@ import UIKit
 
 class ForecastViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    
+    var dailyForecastArray: [DailyWeatherModel]!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -22,12 +22,12 @@ class ForecastViewController: UIViewController {
 
 extension ForecastViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return dailyForecastArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SingleTableViewCell", for: indexPath) as! SingleTableViewCell
-        cell.config(with: data[indexPath.row])
+        cell.config(with: dailyForecastArray[indexPath.row])
         return cell
     }
     
@@ -37,5 +37,4 @@ extension ForecastViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
-    
 }

@@ -20,10 +20,11 @@ class SingleTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    final func config (with data: forecastItem) {
+    final func config (with data: DailyWeatherModel) {
         dayOfTheWeek.text = data.day
         tempMinLabel.text = String(data.tempLow)
         tempMaxLabel.text = String(data.tempHigh)
+        weatherIconImage.image = UIImage(named: data.icon)
         summaryLabel.text = data.summary
         
     }
