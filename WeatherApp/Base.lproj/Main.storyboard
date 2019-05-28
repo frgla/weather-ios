@@ -43,14 +43,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6is-tt-f0b">
-                                <rect key="frame" x="190" y="393.5" width="34" height="19.5"/>
+                                <rect key="frame" x="190" y="383.5" width="34" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWg-IU-joO">
-                                <rect key="frame" x="130" y="576" width="155" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWg-IU-joO">
+                                <rect key="frame" x="129.5" y="758" width="155" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="See 8-day forecast"/>
                                 <connections>
@@ -61,11 +60,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6is-tt-f0b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4n2-Cu-QOH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qWg-IU-joO" secondAttribute="bottom" constant="70" id="AkQ-rZ-oTI"/>
                             <constraint firstItem="X1a-zj-dsr" firstAttribute="top" secondItem="GpC-62-Shx" secondAttribute="bottom" constant="20" id="HUl-7f-QtR"/>
                             <constraint firstItem="X1a-zj-dsr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JJ1-9H-vsl"/>
                             <constraint firstItem="GpC-62-Shx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NkG-bT-HRE"/>
+                            <constraint firstItem="qWg-IU-joO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sai-lY-ckC"/>
+                            <constraint firstItem="6is-tt-f0b" firstAttribute="top" secondItem="TQ2-0A-vWX" secondAttribute="bottom" constant="10" id="ZDs-1c-uaP"/>
                             <constraint firstItem="GpC-62-Shx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="b6k-0g-36J"/>
-                            <constraint firstItem="6is-tt-f0b" firstAttribute="top" secondItem="TQ2-0A-vWX" secondAttribute="bottom" constant="20" id="fdu-Li-WAq"/>
                             <constraint firstItem="Yyw-qq-jX8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jPK-hN-6As"/>
                             <constraint firstItem="TQ2-0A-vWX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oda-tr-vlg"/>
                             <constraint firstItem="Yyw-qq-jX8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="qS9-we-dy6"/>
@@ -93,9 +94,24 @@
                     <view key="view" contentMode="scaleToFill" id="r6b-iS-mXs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2l0-Qm-Mlr">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2l0-Qm-Mlr" firstAttribute="trailing" secondItem="TdN-Rz-WLv" secondAttribute="trailing" id="0Kn-ct-BFO"/>
+                            <constraint firstItem="2l0-Qm-Mlr" firstAttribute="leading" secondItem="TdN-Rz-WLv" secondAttribute="leading" id="0Mt-I4-RPS"/>
+                            <constraint firstAttribute="bottom" secondItem="2l0-Qm-Mlr" secondAttribute="bottom" id="YKd-4T-R9j"/>
+                            <constraint firstItem="2l0-Qm-Mlr" firstAttribute="top" secondItem="TdN-Rz-WLv" secondAttribute="top" id="aKw-gb-lad"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TdN-Rz-WLv"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="2l0-Qm-Mlr" id="PdR-ht-tFj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJy-ra-5UO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
